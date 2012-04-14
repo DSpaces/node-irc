@@ -507,7 +507,7 @@ private(IRC.prototype, {
         // anything other than ctcp
         var parts = line.trim().split(/ :/)
           , args = parts[0].split(' ');
-        if (parts.length > 0) args.push(parts[1]);
+        if (parts.length > 0 ) { args.push(line.substring(line.indexOf(' :') + 2 ))}
         if (line.match(/^:/)) {
             args[1] = args.splice(0, 1, args[1]);
             args[1] = (args[1] + '').replace(/^:/, '');
